@@ -1,6 +1,5 @@
-function hero(){
-    console.log("Hero function executed");
-    return 'Hero Function' ;
+const box = () => {
+        return React.createElement('h1', {id: 'box'}, 'Hello World');
 }
 
-export default hero;
+export default box;
