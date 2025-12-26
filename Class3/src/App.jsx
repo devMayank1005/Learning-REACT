@@ -4,6 +4,9 @@ import Button from './components/Button';
 
 const App = () => {
   const age = 18;
+  const users = [
+    'Alice','Bob','Charlie','David'
+  ];
 
   return (
     <div className="text-center mt-10">
@@ -15,11 +18,11 @@ const App = () => {
         This is a simple setup using Tailwind CSS in a Vite + React project.
       </p>
 
-      {/* Correct way */}
-      <Card user="mayank" age= {21} />
-      <Card user="vashu" />
-
-      {age >= 18 ? (
+    {/* Correct way */}
+   { users.map(function(elem){
+      return <Card user={elem} age={age} key={elem} />; 
+   })}
+    {age >= 18 ? (
         <p className="mt-4 text-green-600">You are eligible to vote.</p>
       ) : (
         <p className="mt-4 text-red-600">You are not eligible to vote.</p>
