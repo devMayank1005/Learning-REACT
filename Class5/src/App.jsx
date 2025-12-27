@@ -1,30 +1,26 @@
 import React from 'react'
-import { useState } from 'react';
 
 const App = () => {
 
 
-  const [count, setCount] = useState(0)
-  const Num = count % 2 === 0 ? "Even" : "Odd";
-  
-  
-   let btnClick=()=>{
-    console.log("Button Clicked");
-    setCount(count+1);
+  const [marks, setMarks] = React.useState([80, 90, 70, 28, 95])
 
-   }
+  function graceStudent() {
+    const newMarks = marks.map(function(elem) {
+      {elem<95 ? elem + 5 : elem }
+    })
+    setMarks(newMarks)
+  }
   return (
     <div>
-      <h1> {count}</h1>
-      <button onClick={btnClick}>Click Me</button>
-      <h2>{Num}   </h2>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>   
-      <button onClick={() => setCount(0)}>Reset</button>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-       
+      {marks.map(function (elems,idx) {
+        return <p key={idx}>Marks of student {idx+1} = {elems} ({elems<33 ? "Fail" : "Pass"})</p>
+      })}
 
+      <button onClick={graceStudent}>Give Grace</button>
     </div>
   )
 }
 
 export default App
+
