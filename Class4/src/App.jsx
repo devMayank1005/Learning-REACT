@@ -2,17 +2,6 @@ import React from 'react'
 import Navbar from '../Componenets/Navbar'
 
 
-/*************  ✨ Windsurf Command ⭐  *************/
-/**
- * App component
- * 
- * This component renders a page with a title and three instances of the Navbar component.
- * 
- * The Navbar components are rendered with different titles and links.
- * 
- * @returns {JSX.Element} The rendered App component.
- */
-/*******  d40faa2e-1f19-42ff-be04-399262a18aac  *******/
 const App = () => {
 
   function btnClicked() {
